@@ -1,0 +1,16 @@
+
+Nombre_mesa,descripcion,capacidad,silla_niño,sillas_adulto,ventilador,jardín
+Mesa 1,central,5,false,5,false,true
+Mesa 2,cuadrada,10,true,8,true,true
+Mesa 3,redonda,10,false,10,true,true
+Mesa 4,cuadrada,6,true,5,true,true
+Mesa 5,cumpleaños,10,false,10,true,true
+Mesa 6,VIP,10,true,8,true,true
+Mesa 7,oriental,4,true,3,true,true
+Mesa 8,vegetariana,10,false,8,true,true
+Mesa 9,cuadrada,5,true,4,true,true
+Mesa 10,cuadrada,6,false,6,true,true
+mesa11,redonda,6,false,6,false,false
+mesa12,cuadrada,10,false,10,false,false
+mesa13,redonda,10,false,10,false,false
+mesa 14,redonda,10,false,10,false,false
