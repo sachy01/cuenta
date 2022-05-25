@@ -451,25 +451,25 @@ public class TrabajoM03 {
         
     }
     
-        public static void Login() {
-        
+        private static void Login() {
+        //Como podemos ver aqui procedemos a crear la funcion de login
         Scanner entrada = new Scanner (System.in);
-        String user, password, rol = "";
+        String user, password, rol = ""; 
         boolean correctLogin = false;
-        int intentos = 3;
+        int intentos = 3;//Se precede a crear un int iniciado en 3
 
         System.out.println("  Control de acceso");
         System.out.println("***********************");
-        do {
+        do { // creamos un bucle en el cual se va a repeti asta que los intenntos llegue a cero 
             System.out.print("Usuario: ");
             user = entrada.next();
-            if (comprobarUser(user)) {
+            if (comprobarUser(user)) {//Procedemos a crear el primer if que la funcion es que si el user se encuentra en el fichero pasamos a introducir la contraseña 
                 System.out.print("Password: ");
                 password = entrada.next();
-                if (comprobarPassword(user, password)) {
-                    rol = verificarRol(user, password);
+                if (comprobarPassword(user, password)) {//Como se puede en este if procedemos a comporbar el user y el pass y si los dos coesiden se pasa al roll 
+                    rol = verificarRol(user, password);//Si el user y pass coesiden se en cierra el roll de ese user en una variable  
                     correctLogin = true;
-                } else {
+                } else {//Este else es para cuando falla la contraseña y se va restando los intentos 
                     System.out.println("CONTRASEÑA INCORRECTA");
                     intentos--;
                     System.out.println("Quedan " + intentos + " intentos");
@@ -479,13 +479,13 @@ public class TrabajoM03 {
                 intentos--;
                 System.out.println("Quedan " + intentos + " intentos");
             }
-        } while (!correctLogin && intentos > 0);
+        } while (!correctLogin && intentos > 0);//Finaliza el bucle cuando llega a cero los intentos 
 
-        if (rol.equalsIgnoreCase("camarero")) {
+        if (rol.equalsIgnoreCase("camarero")) {//Como podemos ver en este if es que manda al menu de camaro
             menuCamarero(user);
-        } else if (rol.equalsIgnoreCase("admin")) {
+        } else if (rol.equalsIgnoreCase("admin")) {//Como podemos ver en este if es que manda al menu de admin
             menuAdmin(user);
-        } else if (intentos < 1) {
+        } else if (intentos < 1) {//Como podemos ver aca se finaliza el login cuando los intentos sean menor que 1
             System.out.println("ERROR: SE HAN ACABADO LOS INTENTOS.");
         } else {
             System.out.println("ERROR: EL ROL NO ES CORRECTO, MODIFICA EL ROL DEL USUARIO");
@@ -494,7 +494,7 @@ public class TrabajoM03 {
      
         
     }
-    public static boolean comprobarUser(String usuario) {
+    private static boolean comprobarUser(String usuario) {
            boolean correct = false;
         // LEER FICHERO
         try {
@@ -523,7 +523,7 @@ public class TrabajoM03 {
     }
 
    
-    public static boolean comprobarPassword(String usuario, String contra) {
+    private static boolean comprobarPassword(String usuario, String contra) {
         boolean correct = false;
         // LEER FICHERO
         try {
@@ -552,7 +552,7 @@ public class TrabajoM03 {
         return correct;
     }
     
-    public static String verificarRol(String usuario, String contra) {
+    private static String verificarRol(String usuario, String contra) {
         String rolUser = "";
         // LEER FICHERO
         try {
